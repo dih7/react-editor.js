@@ -1,7 +1,8 @@
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import InlineCode from '@editorjs/inline-code';
-import Image from '@editorjs/image';
+// import Image from '@editorjs/image';
+import SimpleImage from '@editorjs/simple-image';
 import Embed from '@editorjs/embed';
 import Quote from '@editorjs/quote';
 import Marker from '@editorjs/marker';
@@ -17,7 +18,7 @@ import Checklist from '@editorjs/checklist';
 export default {
   header: Header,
   list: List,
-  image: Image,
+  image: SimpleImage,
   inlineCode: InlineCode,
   embed: Embed,
   quote: Quote,
