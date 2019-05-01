@@ -41,7 +41,9 @@ class Editor extends Component {
   }
 
   componentWillUnmount() {
-    this.editor.destroy();
+    if (typeof this.editor !== 'undefined') {
+      this.editor.destroy();
+    }
   }
 
   _initEditor = () => {
