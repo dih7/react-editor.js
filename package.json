@@ -1,6 +1,6 @@
 {
   "name": "@brandontle/react-editor.js",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React wrapper component for Editor.js",
   "main": "dist/react-editorjs.cjs.js",
   "module": "dist/react-editorjs.esm.js",
@@ -30,7 +30,6 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "@editorjs/simple-image": "^1.3.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
@@ -75,6 +74,7 @@
     "@editorjs/paragraph": "^2.5.0",
     "@editorjs/quote": "^2.2.0",
     "@editorjs/raw": "^2.1.1",
+    "@editorjs/simple-image": "^1.3.1",
     "@editorjs/table": "^1.2.0",
     "@editorjs/warning": "^1.1.0",
     "react": "^16.8.6",
