@@ -85,7 +85,8 @@
     "import/no-extraneous-dependencies": 0,
     "import/extensions": 0,
     "babel/object-curly-spacing": 0,
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "no-param-reassign": 0
   },
   "env": {
     "es6": true,
