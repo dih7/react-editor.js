@@ -1,6 +1,6 @@
 {
   "name": "@brandontle/react-editor.js",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React wrapper component for Editor.js",
   "main": "dist/react-editorjs.cjs.js",
   "module": "dist/react-editorjs.esm.js",
@@ -61,10 +61,10 @@
     "react": "^16.x"
   },
   "dependencies": {
+    "@brandontle/editorjs": "^2.13.0",
     "@editorjs/checklist": "^1.1.0",
     "@editorjs/code": "^2.4.1",
     "@editorjs/delimiter": "^1.1.0",
-    "@editorjs/editorjs": "^2.12.4",
     "@editorjs/embed": "^2.2.0",
     "@editorjs/header": "^2.2.3",
     "@editorjs/image": "^2.2.0",
