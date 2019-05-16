@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import EditorJS from '@brandontle/editorjs';
+import Paragraph from '@editorjs/paragraph';
 import commonTools from './common-tools';
 
 class Editor extends Component {
@@ -75,6 +76,7 @@ class Editor extends Component {
     const toolsList = { ...commonTools, ...customTools };
     toolsList.paragraph = {
       config: {
+        class: Paragraph,
         placeholder: this.placeHolder,
       },
     };
