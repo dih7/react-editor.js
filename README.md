@@ -1,17 +1,21 @@
 # react-editor.js
 
-![npm version](https://img.shields.io/npm/v/@stfy/react-editor.js.svg)
+![npm version](https://img.shields.io/npm/v/@brandontle/react-editor.js.svg)
 
-React wrapper component for [Editor.js](https://github.com/codex-team/editor.js)
+React wrapper component for [Editor.js](https://github.com/codex-team/editor.js) forked from [@stfy's react-editor.js](https://github.com/stfy/react-editor.js).
+
+This fork includes:
+- temporary readOnly solution
+- usage of @brandontle/editorjs with changes like styling
 
 ## Install
 
 ```bash
-npm install --save @stfy/react-editor.js
+npm install --save @brandontle/react-editor.js
 
 // or Yarn
 
-yarn add @stfy/react-editor.js
+yarn add @brandontle/react-editor.js
 ```
 
 ## Usage
@@ -19,7 +23,7 @@ yarn add @stfy/react-editor.js
 ```jsx
 
 import React, { Component } from 'react'
-import Editor from '@stfy/react-editor.js'
+import Editor from '@brandontle/react-editor.js'
 
 const App => (
   <>
@@ -84,6 +88,8 @@ const App => (
 | checklist  | `@editorjs/checklist`  |
 
 ## Contributing
+
+Original [react-editor.js repo by @stfy](https://github.com/stfy/react-editor.js)
 
 Welcome to contribute.
 
