@@ -14,6 +14,7 @@ class Editor extends Component {
     data: {},
     autofocus: true,
     readOnly: false,
+    placeHolder: 'Tell your story...',
   };
 
   static propTypes = {
@@ -25,6 +26,7 @@ class Editor extends Component {
     data: PropTypes.object,
     autofocus: PropTypes.bool,
     readOnly: PropTypes.bool,
+    placeHolder: PropTypes.string,
   };
 
   constructor(props) {
@@ -32,6 +34,7 @@ class Editor extends Component {
 
     this._tools = this._initTools(props.tools, props.excludeTools);
     this.readOnly = props.readOnly;
+    this.placeHolder = props.placeHolder;
     this._onChange = props.onChange;
     this._onReady = props.onReady;
 
@@ -70,6 +73,11 @@ class Editor extends Component {
   _initTools = () => {
     const { customTools, excludeDefaultTools } = this.props;
     const toolsList = { ...commonTools, ...customTools };
+    toolsList.paragraph = {
+      config: {
+        placeholder: this.placeHolder,
+      },
+    };
 
     if (excludeDefaultTools.length !== 0) {
       return Object.keys(toolsList)
