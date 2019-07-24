@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import EditorJS from '@brandontle/editorjs';
+import Paragraph from '@editorjs/paragraph';
 import commonTools from './common-tools';
 
 class Editor extends Component {
@@ -14,6 +15,7 @@ class Editor extends Component {
     data: {},
     autofocus: true,
     readOnly: false,
+    placeholder: 'Tell your story...',
   };
 
   static propTypes = {
@@ -25,6 +27,7 @@ class Editor extends Component {
     data: PropTypes.object,
     autofocus: PropTypes.bool,
     readOnly: PropTypes.bool,
+    placeholder: PropTypes.string,
   };
 
   constructor(props) {
@@ -32,6 +35,7 @@ class Editor extends Component {
 
     this._tools = this._initTools(props.tools, props.excludeTools);
     this.readOnly = props.readOnly;
+    this.placeholder = props.placeholder;
     this._onChange = props.onChange;
     this._onReady = props.onReady;
 
@@ -43,7 +47,9 @@ class Editor extends Component {
   }
 
   componentWillUnmount() {
-    this._destroyEditor();
+    if (typeof this.editor.destroy !== 'undefined') {
+      this._destroyEditor();
+    }
   }
 
   _initEditor = () => {
@@ -70,6 +76,12 @@ class Editor extends Component {
   _initTools = () => {
     const { customTools, excludeDefaultTools } = this.props;
     const toolsList = { ...commonTools, ...customTools };
+    toolsList.paragraph = {
+      config: {
+        class: Paragraph,
+        placeholder: this.placeholder,
+      },
+    };
 
     if (excludeDefaultTools.length !== 0) {
       return Object.keys(toolsList)
