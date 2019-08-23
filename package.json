@@ -1,5 +1,5 @@
 {
-  "name": "@brandontle/react-editor.js",
+  "name": "@dih7/react-editor.js",
   "version": "0.1.14",
   "description": "React wrapper component for Editor.js",
   "main": "dist/react-editorjs.cjs.js",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandontle/react-editor.js"
+    "url": "https://github.com/dih7/react-editor.js"
   },
   "author": "Brandon Le <ble.message@gmail.com>",
   "license": "MIT",
