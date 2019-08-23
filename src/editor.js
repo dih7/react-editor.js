@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import EditorJS from '@brandontle/editorjs';
+import EditorJS from '@editorjs/editorjs';
 import Paragraph from '@editorjs/paragraph';
 import commonTools from './common-tools';
 
