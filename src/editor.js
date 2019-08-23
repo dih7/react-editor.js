@@ -7,7 +7,7 @@ import commonTools from './common-tools';
 
 class Editor extends Component {
   static defaultProps = {
-    holderId: 'editorjs-holder',
+    holder: 'editorjs-holder',
     customTools: {},
     excludeDefaultTools: [],
     onChange: () => {},
@@ -15,11 +15,11 @@ class Editor extends Component {
     data: {},
     autofocus: true,
     readOnly: false,
-    placeholder: 'Tell your story...',
+    placeholder: 'Enter content...',
   };
 
   static propTypes = {
-    holderId: PropTypes.string,
+    holder: PropTypes.string,
     customTools: PropTypes.object,
     excludeDefaultTools: PropTypes.arrayOf(PropTypes.string),
     onChange: PropTypes.func,
@@ -53,9 +53,9 @@ class Editor extends Component {
   }
 
   _initEditor = () => {
-    const { holderId, autofocus, data } = this.props;
+    const { holder, autofocus, data } = this.props;
     this.editor = new EditorJS({
-      holderId,
+      holder,
       autofocus,
       data,
       tools: this._tools,
@@ -118,9 +118,9 @@ class Editor extends Component {
   };
 
   render() {
-    const { holderId } = this.props;
+    const { holder } = this.props;
     return React.createElement('div', {
-      id: holderId,
+      id: holder,
       ref: this._el,
     });
   }

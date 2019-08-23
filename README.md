@@ -5,6 +5,7 @@
 React wrapper component for [Editor.js](https://github.com/codex-team/editor.js) forked from [@stfy's react-editor.js](https://github.com/stfy/react-editor.js).
 
 This fork includes:
+
 - temporary readOnly solution
 - usage of @brandontle/editorjs with changes like styling
 
@@ -29,7 +30,7 @@ const App => (
   <>
     <Editor
         autofocus
-        holderId="editorjs-container"
+        holder="editorjs-container"
         excludeDefaultTools={['header']}
         onChange={(data) => console.log(data)}
         customTools={{
@@ -60,7 +61,7 @@ const App => (
 | Name                |    Type    |      Default      | Description                                   |
 | :------------------ | :--------: | :---------------: | :-------------------------------------------- |
 | autofocus           | `boolean`  |      `true`       | Set Caret to the Editor after initialisation  |
-| holderId            |  `string`  | `editorjs-holder` | Id of Element that should contain the Editor  |
+| holder              |  `string`  | `editorjs-holder` | Id of Element that should contain the Editor  |
 | onChange            | `function` |      `null`       | onChange callback                             |
 | onReady             | `function` |      `null`       | onReady callback                              |
 | data                |  `object`  |      `null`       | Previously saved data that should be rendered |
