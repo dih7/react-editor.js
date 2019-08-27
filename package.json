@@ -1,13 +1,13 @@
 {
   "name": "@dih7/react-editor.js",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "React wrapper component for Editor.js",
   "main": "dist/react-editorjs.cjs.js",
   "module": "dist/react-editorjs.esm.js",
   "browser": "dist/react-editorjs.umd.js",
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server example/index.js --mode development",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server example/index.js --mode development ",
     "build": "rollup -c",
     "build:umd": "cross-env NODE_ENV=production webpack --mode production",
     "lint": "eslint src",
@@ -23,7 +23,6 @@
     "type": "git",
     "url": "https://github.com/dih7/react-editor.js"
   },
-  "author": "Brandon Le <ble.message@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -60,10 +59,10 @@
     "react": "^16.x"
   },
   "dependencies": {
-    "@brandontle/editorjs": "^2.13.3",
     "@editorjs/checklist": "^1.1.0",
     "@editorjs/code": "^2.4.1",
     "@editorjs/delimiter": "^1.1.0",
+    "@editorjs/editorjs": "^2.15.0",
     "@editorjs/embed": "^2.2.1",
     "@editorjs/header": "^2.3.0",
     "@editorjs/image": "^2.3.1",

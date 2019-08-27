@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Editor from '@dih7/react-editor.js';
-
-const el = document.getElementById('app');
+import { render } from 'react-dom';
+import Editor from '../dist/react-editorjs.umd';
 
 const wrapperStyle = {
   width: '1280px',
@@ -11,9 +9,9 @@ const wrapperStyle = {
   border: '1px solid #e0e0e0',
 };
 
-ReactDOM.render(
+render(
   <div style={wrapperStyle}>
     <Editor excludeDefaultTools={['checklist']} />
   </div>,
-  el,
+  document.getElementById('app'),
 );
