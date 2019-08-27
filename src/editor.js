@@ -15,7 +15,7 @@ class Editor extends Component {
     data: {},
     autofocus: true,
     readOnly: false,
-    placeholder: 'Enter content...'
+    placeholder: 'Enter content...',
   };
 
   static propTypes = {
@@ -27,7 +27,7 @@ class Editor extends Component {
     data: PropTypes.object,
     autofocus: PropTypes.bool,
     readOnly: PropTypes.bool,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   };
 
   constructor(props) {
@@ -61,7 +61,7 @@ class Editor extends Component {
       tools: this._tools,
 
       onChange: this._handleChange,
-      onReady: this._handleReady
+      onReady: this._handleReady,
     });
     return this.editor;
   };
@@ -79,8 +79,8 @@ class Editor extends Component {
     toolsList.paragraph = {
       config: {
         class: Paragraph,
-        placeholder: this.placeholder
-      }
+        placeholder: this.placeholder,
+      },
     };
 
     if (excludeDefaultTools.length !== 0) {
@@ -121,7 +121,7 @@ class Editor extends Component {
     const { holder } = this.props;
     return React.createElement('div', {
       id: holder,
-      ref: this._el
+      ref: this._el,
     });
   }
 }

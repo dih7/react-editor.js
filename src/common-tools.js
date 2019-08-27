@@ -30,5 +30,5 @@ export default {
   table: Table,
   warning: Warning,
   paragraph: Paragraph,
-  checklist: Checklist
+  checklist: Checklist,
 };
