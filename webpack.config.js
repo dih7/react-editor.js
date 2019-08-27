@@ -3,32 +3,37 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 // const webpack = require('webpack');
 
-module.exports = {
-  entry: path.resolve(__dirname, 'src/index'),
-  target: 'web',
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
+module.exports = {
+  devtool: 'inline-source-map',
+  entry: {
+    app: '.example/index.js',
+  },
+  target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'react-editorjs.umd.js',
-    library: ['React-EditorJS'],
-    libraryTarget: 'umd',
+    filename: '[name].bundle.js',
   },
-
   resolve: {
-    modules: [path.join(__dirname, 'src'), 'node_modules'],
-    extensions: ['.js'],
+    extensions: ['*', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /(node_modules)/,
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env'], '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
       },
     ],
   },
-
-  devtool: false,
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -37,4 +42,13 @@ module.exports = {
       }),
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'React Editor.js Example',
+      template: './example/index.ejs',
+    }),
+    new webpack.DefinePlugin({
+      __DEV__: process.env.NODE_ENV !== 'production',
+    }),
+  ],
 };

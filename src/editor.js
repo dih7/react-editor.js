@@ -1,35 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import EditorJS from '@brandontle/editorjs';
+import EditorJS from '@editorjs/editorjs';
 import Paragraph from '@editorjs/paragraph';
 import commonTools from './common-tools';
 
 class Editor extends Component {
-  static defaultProps = {
-    holder: 'editorjs-holder',
-    customTools: {},
-    excludeDefaultTools: [],
-    onChange: () => {},
-    onReady: () => {},
-    data: {},
-    autofocus: true,
-    readOnly: false,
-    placeholder: 'Enter content...',
-  };
-
-  static propTypes = {
-    holder: PropTypes.string,
-    customTools: PropTypes.object,
-    excludeDefaultTools: PropTypes.arrayOf(PropTypes.string),
-    onChange: PropTypes.func,
-    onReady: PropTypes.func,
-    data: PropTypes.object,
-    autofocus: PropTypes.bool,
-    readOnly: PropTypes.bool,
-    placeholder: PropTypes.string,
-  };
-
   constructor(props) {
     super(props);
 
@@ -59,7 +35,6 @@ class Editor extends Component {
       autofocus,
       data,
       tools: this._tools,
-
       onChange: this._handleChange,
       onReady: this._handleReady,
     });
@@ -127,3 +102,27 @@ class Editor extends Component {
 }
 
 export default Editor;
+
+Editor.defaultProps = {
+  holder: 'editorjs-holder',
+  customTools: {},
+  excludeDefaultTools: [],
+  onChange: () => {},
+  onReady: () => {},
+  data: {},
+  autofocus: true,
+  readOnly: false,
+  placeholder: 'Enter content...',
+};
+
+Editor.propTypes = {
+  holder: PropTypes.string,
+  customTools: PropTypes.object,
+  excludeDefaultTools: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func,
+  onReady: PropTypes.func,
+  data: PropTypes.object,
+  autofocus: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  placeholder: PropTypes.string,
+};

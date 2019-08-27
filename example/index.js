@@ -11,7 +11,7 @@ const wrapperStyle = {
 
 render(
   <div style={wrapperStyle}>
-    <Editor excludeDefaultTools={['checklist']} />
+    <Editor />
   </div>,
   document.getElementById('app'),
 );
